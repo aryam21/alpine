@@ -1,0 +1,19 @@
+    app:
+        name: alpine
+        code: ALPINE
+        notify: aramanan@ecloudcontrol.com
+        
+    build:
+        version: 3.15
+        env: DEV
+        build_file: none
+        output_files: output/*.zip
+        image_template: alpine-3.15
+        
+    deploy:
+        context: aryam21/DEV
+        replicas: 1
+        port:
+        - 8097
+        - 3000
+        revision : 0
